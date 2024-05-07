@@ -17,13 +17,13 @@
                                         
                                         <i class="fa fa-window-close" onclick="hidemenu()"></i>
                                         <ul>
-                                        <li><a href="index.html">HOME</a></li>
-                                        <li><a href="about.html">ABOUT US</a></li>
+                                        <li><a href="form.php">HOME</a></li>
+                                        <li><a href="about.php">ABOUT US</a></li>
                                         
-                                        <li><a href="gallary.html">GALLARY</a></li>
-                                        <li><a href="swaraj.html">FORM</a></li>
-                                        <li><a href="result.html">RESULTS</a></li>
-                                        <li><a href="admin-login.html">ADMIN LOGIN</a></li>
+                                        <li><a href="gallary.php">GALLARY</a></li>
+                                        <li><a href="swaraj.php">FORM</a></li>
+                                        <li><a href="result.php">RESULTS</a></li>
+                                        <li><a href="admin-login.php">ADMIN LOGIN</a></li>
                                         
                                         
                                         </ul>
@@ -160,7 +160,7 @@
 
           <section class="cta">
                     <h1>Enroll For Our Online Courses</h1>
-                    <a href="con.html" class="hero1">CONTACT US</a>
+                    <a href="con.php" class="hero1">CONTACT US</a>
 
 
 
