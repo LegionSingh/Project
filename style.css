@@ -1,166 +1,594 @@
-*{
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          font-family: 'Poppins',sans-serif;
-
-}
-.contact
-{
-          position: relative;
-          min-height: 100vh;
-          padding: 50px 100px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          background: url(cont.jpg);
-          background-size: cover;
-}
-.contact .content
-{
-          max-width: 800px;
-          text-align: center;
-}
-.contact .content h2
-{
-font-size: 36px;
-font-weight: 500;
-color: #fff;
-}
-.contact .content p
-{
-
-font-weight: 300;
-color: #fff;
-}
-.container
-{
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-margin-top: 30px;
-}
-.container .contactinfo
-
-{
-          width: 50%;
-          display: flex;
-          flex-direction: column;
-}
-.container .contactinfo .box
-{
-          position: relative;
-          padding: 20px 0;
-          display: flex;
-}
-.container .contactinfo .box .icon
-{
-          min-width: 60px;
-          height: 60px;
-          background: #fff;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 50%;
-          font-size: 22px;
-
-}
-.container .contactinfo .box .text
-{
-          display: flex;
-          margin-left: 20px;
-          font-size: 16px;
-          color: #fff;
-          flex-direction: column;
-          font-weight: 300;
-}
-.container .contactinfo .box .text h3
-{
-          font-weight: 500;
-          color: #00bcd4;
-}
-.contactForm
-{
- width: 40%;
- padding: 40px;
- background: #fff;         
-}
-.contactForm h2
-{
-   font-size: 30px;
-   color: #333;
-   font-weight: 500;
-
-}
-.contactForm .inputbox
-{
-          position: relative;
-          width: 100%;
-          margin-top: 10px;
-}
-.contactForm .inputbox input,
-.contactForm .inputbox textarea
-{
-  width: 100%;
-  padding: 5px 0;
-  font-size: 16px;
-  margin: 10px 0;
-  border: none;
-  border-bottom: 2px solid #333;
-  outline: none;
-  resize: none;
-}
-.contactForm .inputbox span
-{
-          position: absolute;
-          left: 0;
-          padding: 5px 0;
-          font-size: 16px;
-          margin: 10px 0;
-          pointer-events: none;
-          transition: 0.5s;
-          color: #666;
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@100;500;600;900&display=swap');
+*, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.contactForm .inputbox input:focus ~ span,
-.contactForm .inputbox input:valid ~ span,
-.contactForm .inputbox textarea:focus ~ span,
-.contactForm .inputbox textarea:valid ~ span
-{
-          color: #e91e63;
-          font-size: 12px;
-          transform: translateY(-20px);
+body {
+    font-family: 'Poppins', sans-serif;
+    
 }
-.contactForm .inputbox input[type="submit"]
-{
-  width: 100px;
-  background: #00bcd4;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  font-size: 18px;
+::selection {
+    background-color: #0b372dbb;
 }
 
-@media (max-width: 991px)
-{
-  .contract
-  {
-    padding: 50px;
-  }
-  .container
-  {
-    flex-direction: column;
-  }
-  .container .contactinfo
-  {
-    margin-bottom: 40px;
-  }
-  .container .contactinfo,
-  .contactForm
-  {
+.logo {
+    width: 100px;
+    opacity: 0.5;
+}
+
+header {
+    position:absolute;
+    z-index: 9999;
     width: 100%;
-  }
+    padding: 0.9rem 0;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
 }
+header nav {
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+header ul a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0 1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.83rem;
+}
+
+.search a{
+    font-size: 1.05rem;
+    padding: 0.3rem;
+}
+.hamburger {
+    padding: 1.5rem;
+}
+.hamburger a {
+    padding: 0;
+    width: 37px;
+    height: 37px;
+    display: flex;
+    border-radius: 50%;
+    background-color: rgba(115,115,115,0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger .bar {
+    width: 52%;
+    height: 1.3px;
+    background-color: #fff;
+    border-radius: 2px;
+    position: relative;
+}
+
+.hamburger .bar::before, .hamburger .bar::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 60%;
+    height: 100%;
+    background-color: inherit;
+    border-radius: 2px;
+    transform: translate(-50%);
+}
+
+.hamburger .bar::before{
+    top: -4.5px;
+
+}
+
+.hamburger .bar::after{
+    top: 4.5px;
+}
+main {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: rgb(13, 13, 14);
+}
+
+.parallax {
+    pointer-events: none;
+    transition: 0.45s cubic-bezier(0.2, 0.49, 0.32, 0.99);
+}
+
+.bg-img {
+    position: absolute;
+    width: 194.44%;
+    top: calc(1.86%);
+    left: calc(50.69%);
+    
+    z-index: 1;
+}
+.fog-7 {
+    position: absolute;
+    width: 132%;
+    top: calc(37.7%);
+    left: calc(70.8%);
+    
+    z-index: 2;
+}
+
+.mountain-10 {
+    z-index: 3;
+    position: absolute;
+    width: 61.94%; /* As calculated from (892 / 1440) * 100 */
+    top: calc(57.67%); /* As calculated from (69 / 900) * 100 */
+    left: calc(65.97%); /* As calculated from (230 / 1440) * 100 */
+}
+    
+    
+
+
+.fog-6 {
+    z-index: 4;
+    position: absolute;
+    width: 112.57%; /* As calculated from (1610 / 1440) * 100 */
+    top: calc(59.44%); /* As calculated from (85 / 900) * 100 */
+    left: calc(50.69%); /* As calculated from (10 / 1440) * 100 */
+}
+
+
+.mountain-9 {
+    z-index: 5;
+    position: absolute;
+    width: 32.64%; /* As calculated from (470 / 1440) * 100 */
+    top: 62.56%; /* As calculated from (50% + (113 / 900) * 100 = 62.56%) */
+    left: 18.26%; /* As calculated from (50% - (457 / 1440) * 100 = 18.26%) */
+}
+
+.mountain-8 {
+    z-index: 6;
+    position: absolute;
+    width: 73.25%; /* As calculated from (810 / 1440) * 100 */
+    top: 59.56%; /* As calculated from (50% + (86 / 900) * 100 = 59.56%) */
+    left: 35.97%; /* As calculated from (50% - (202 / 1440) * 100 = 35.97%) */
+}
+
+.fog-5 {
+    z-index: 7;
+    position: absolute;
+    width: 31.25%; /* As calculated from (450 / 1440) * 100 */
+    top: 67.78%; /* As calculated from (50% + (160 / 900) * 100 = 67.78%) */
+    left: 51.39%; /* As calculated from (50% + (20 / 1440) * 100 = 51.39%) */
+}
+
+.mountain-7 {
+    z-index: 8;
+    position: absolute;
+    width: 55.36%; /* As calculated from (538 / 1440) * 100 */
+    top: 63.67%; /* As calculated from (50% + (123 / 900) * 100 = 63.67%) */
+    left: 28.82%; /* As calculated from (50% - (305 / 1440) * 100 = 28.82%) */
+}
+
+
+
+.text{
+    position: absolute;
+    z-index: 9;
+    top: calc(36.11%);
+    left: 50%;
+    pointer-events: auto;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.text h2{
+    font-weight: 100;
+    font-size: 6.5rem;
+    line-height: 0.88;
+}
+.text h1 {
+    font-weight: 650;
+    font-size: 8rem;
+    line-height: 0.88;
+}
+
+.mountain-6 {
+    position: absolute;
+    z-index: 10;
+    top: calc(56.67%);
+    left: calc(98.61%);
+    width: 28.33%;
+    
+    
+}
+
+
+
+.fog-4 {
+    position: absolute;
+    z-index: 11;
+    top: calc(74.67%);
+    left: calc(59.03%);
+    width: 40.97%;
+    
+}
+.mountain-5 {
+    position: absolute;
+    z-index: 12;
+    width: 43.40%;
+    top: calc(83.33%);
+    left: calc(61.11%);
+    
+}
+
+.fog-3 {
+    position: absolute;
+    z-index: 13;
+    width: 108.33%;  /* As calculated from (1560 / 1440) * 100 */
+    top: 81.67%; /* As calculated from (50% + (286 / 900) * 100 = 81.67%) */
+    left: 50.97%; 
+    
+}
+
+.mountain-4 {
+    position: absolute;
+    z-index: 14;
+    width: 55.56%;  /* As calculated from (800 / 1440) * 100 */
+    top: 81.67%; /* As calculated from (50% + (286 / 900) * 100 = 81.67%) */
+    left: 78.47%;
+    
+}
+
+.mountain-3 {
+    position: absolute;
+    z-index: 15;
+    width: 41.67%;  /* As calculated from (600 / 1440) * 100 */
+    top: 55.56%; /* As calculated from (50% + (60 / 900) * 100 = 55.56%) */
+    left: 8.89%;
+    
+}
+.fog-2 {
+    position:absolute;
+    z-index: 16;
+    width: 108.33%;  /* As calculated from (1560 / 1440) * 100 */
+    top: 66.33%; /* As calculated from (50% + (147 / 900) * 100 = 66.33%) */
+    left: 48.06%;
+    
+}
+.mountain-2 {
+    position: absolute;
+    z-index: 17;
+    width: 55.56%;  /* As calculated from (800 / 1440) * 100 */
+    top: 66.33%; /* As calculated from (50% + (147 / 900) * 100 = 66.33%) */
+    left: 78.61%;
+    
+}
+.mountain-1 {
+    position: absolute;
+    z-index: 18;
+    width: 41.67%;  /* As calculated from (600 / 1440) * 100 */
+    top: 55.78%; /* As calculated from (50% + (52 / 900) * 100 = 55.78%) */
+    left: 8.89%; /* As calculated from (50% - (593 / 1440) * 100 = 8.89%) */
+}
+
+.fog-1 {
+    position: absolute;
+    z-index: 21;
+    width: 108.33%;  /* As calculated from (1560 / 1440) * 100 */
+    top: 66.78%; /* As calculated from (50% + (151 / 900) * 100 = 66.78%) */
+    left: 48.06%; /* As calculated from (50% - (28 / 1440) * 100 = 48.06%) */
+}
+
+.sun-rays {
+    position: absolute;
+    z-index: 19;
+    top: 0;
+    right: 0;
+    width: 41.31%;
+    pointer-events: none;
+}
+.sun-rays {
+    position: absolute;
+    z-index: 20;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    pointer-events: none;
+}
+.vignette {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 65%,
+    rgba(0,0,0,0.7));
+    pointer-events: none;
+}
+@media(max-width:1450px){
+    .text h1{
+        font-size: 5.8rem;
+    }
+    .text h2{
+        font-size:4.7rem;
+    }    
+    header nav{
+        padding:0 0rem;
+    }
+    .logo{
+        width:50px;
+    }
+    header ul a{
+        font-size:0.73rem;
+        padding:0 0.9rem;
+    }
+    .search a{
+        font-size:0.85rem;
+        padding:0 1.8rem;
+    }
+    .hamburger a{
+    height:30px;
+    width:30px;
+    }
+
+    .bg-img {
+        width: initial;
+        height: 311.104%;
+    }
+    
+    .fog-7 {
+        width: initial;
+        height: 211.2%;
+    }
+    
+    .mountain-10 {
+        width: initial;
+        height: 99.104%;
+    }
+    
+    .fog-6 {
+        width: initial;
+        height: 180.112%;       
+    }
+    .mountain-9 {
+        width: initial;
+        height: 164.224%;
+    }
+    
+    .mountain-8 {
+        width: initial;
+        height: 103%;
+    }
+    
+    .fog-5 {
+        width: initial;
+        height: 50.0%;
+    }
+    
+    .mountain-7 {
+        width: initial;
+        height: 107.55%;
+    }
+    .mountain-6 {
+        width: initial;
+        height: 45.328%;
+    }
+    
+    .fog-4 {
+        width: initial;
+        height: 65.552%;
+    }
+    
+    .mountain-5 {
+        width: initial;
+        height: 69.44%;
+    }
+    
+    .fog-3 {
+        width: initial;
+        height: 173.328%;
+    }
+    
+    .mountain-4 {
+        width: initial;
+        height: 88.896%;
+    }
+    
+    .mountain-3 {
+        width: initial;
+        height: 106.67%;
+    }
+    
+    .fog-2 {
+        width: initial;
+        height: 173.328%;
+    }
+    
+    .mountain-2 {
+        width: initial;
+        height: 0%;
+    
+    }
+    
+    .mountain-1 {
+        width: initial;
+        height: 101.672%;
+    }
+    
+    .fog-1 {
+        width: initial;
+        height: 173.328%;
+    }
+    
+    .sun-rays {
+        width: initial;
+        height: 66.096%;
+    }
+    
+    .vignette {
+        width: initial;
+        height: 160.0%;
+    }
+    header nav{
+        padding:0px;}
+    
+    header {
+        padding:0px;}
+}
+@media(max-width:725px){
+    .text h1{
+        font-size: 5rem;
+        line-height: 1.1;
+    }
+    .text h2{
+        font-size:4.1rem;
+        line-height:1.1 ;
+    }    
+    header nav{
+        padding:0 1rem;
+    }
+    .logo{
+        width:50px;
+    }
+    header ul a{
+        font-size:0.73rem;
+        padding:0 0.9rem;
+    }
+    .search a{
+        font-size:0.85rem;
+        padding:0 1.8rem;
+    }
+    .hamburger a{
+    height:30px;
+    width:30px;
+    }
+
+    .bg-img {
+        width: initial;
+        height: 311.104%;
+    }
+    
+    .fog-7 {
+        width: initial;
+        height: 211.2%;
+    }
+    
+    .mountain-10 {
+        width: initial;
+        height: 99.104%;
+    }
+    
+    .fog-6 {
+        width: initial;
+        height: 180.112%;       
+    }
+    .mountain-9 {
+        width: initial;
+        height: 164.224%;
+    }
+    
+    .mountain-8 {
+        width: initial;
+        height: 103%;
+    }
+    
+    .fog-5 {
+        width: initial;
+        height: 50.0%;
+    }
+    
+    .mountain-7 {
+        width: initial;
+        height: 59.776%;
+    }
+    .mountain-6 {
+        width: initial;
+        height: 45.328%;
+    }
+    
+    .fog-4 {
+        width: initial;
+        height: 65.552%;
+    }
+    
+    .mountain-5 {
+        width: initial;
+        height: 69.44%;
+    }
+    
+    .fog-3 {
+        width: initial;
+        height: 173.328%;
+    }
+    
+    .mountain-4 {
+        width: initial;
+        height: 88.896%;
+    }
+    
+    .mountain-3 {
+        width: initial;
+        height: 106.67%;
+    }
+    
+    .fog-2 {
+        width: initial;
+        height: 173.328%;
+    }
+    
+    .mountain-2 {
+        width: initial;
+        height: 0%;
+    
+    }
+    
+    .mountain-1 {
+        width: initial;
+        height: 101.672%;
+    }
+    
+    .fog-1 {
+        width: initial;
+        height: 173.328%;
+    }
+    
+    .sun-rays {
+        width: initial;
+        height: 66.096%;
+    }
+    
+    .vignette {
+        width: initial;
+        height: 160.0%;
+    }
+    header nav{
+        padding:0px;}
+    
+    header {
+        padding:0px;}
+
+@media(max-width:520px){
+    .text h1{
+        font-size: 3.3rem;
+    }
+    .text h2{
+        font-size:2.6rem;
+    }    
+}}
